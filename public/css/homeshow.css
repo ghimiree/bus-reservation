@@ -1,0 +1,46 @@
+
+.bus-seats {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.bus-seats td {
+    padding: 5px;
+    text-align: center;
+    width: 25%;
+}
+
+.bus-seats .seat {
+    position: relative;
+}
+
+.bus-seats .seat input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.bus-seats .seat .seat-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    font-weight: bold;
+    color: #333;
+}
+
+.bus-seats .seat.selected {
+    background-color: #007bff; /* Selected seat color */
+    color: #fff;
+}
+
+/* Add some margin between 2nd and 3rd columns */
+.bus-seats td:nth-child(3) {
+    margin-right: 20px;
+}
