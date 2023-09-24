@@ -19,6 +19,9 @@ class ReservationController extends Controller
     }
     public function create(Request $request, Bus $bus)
     {
+        if($request->q !== "su"){
+            return "Payment Failed";
+        }
 
         $request->validate([
             'phone' => ['required', 'integer', 'gt:0', 'regex:/((98)|(97))([0-9]){8}/'],

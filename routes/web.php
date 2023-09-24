@@ -14,6 +14,8 @@ Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::get('/bus/search', [HomeController::class, 'search'])->name('home.search');
 Route::get('/bus/{bus}', [HomeController::class, 'show'])->name('home.show');
 
+
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [AccountController::class, 'profile'])->name('account.profile');
     Route::get('/logout', [AccountController::class, 'logout'])->name('account.logout');

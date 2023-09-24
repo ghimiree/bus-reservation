@@ -50,8 +50,6 @@ class AdminController extends Controller
             return $day;
         });
 
-        // dd($weeklyReservations);
-
         return view('admin.dashboard')->with([
             'yearly_earnings' => $yerlyEarnings,
             'monthly_earnings' => $monthlyEarnings,
