@@ -32,7 +32,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/success', [EsewaController::class, 'esewaPaySuccess']);
     Route::get('/failure', [EsewaController::class, 'esewaPayFailed']);
 
-    //chats 
+    //chats
     Route::get('/chats', [ChatController::class, 'index'])->name('chat.index');
     Route::post('/chats', [ChatController::class, 'store'])->name('chat.store');
     Route::get('/get-messages', [ChatController::class, 'getMessages'])->name('chat.getMessages'); //for users
@@ -45,7 +45,7 @@ Route::prefix('admin')->middleware('role:admin')->group(function () {
     Route::get('dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('buses', [AdminController::class, 'buses'])->name('admin.buses');
     Route::get('customers', [CustomerController::class, 'index'])->name('customer.index');
-    Route::get('pending-request', [CustomerController::class, 'pendingRequest'])->name('customer.pendingRequest');
+    Route::get('pending-request/{notification?}', [CustomerController::class, 'pendingRequest'])->name('customer.pendingRequest');
 
     Route::get('/download{earnings}', [\App\Http\Controllers\Company\AdminController::class, 'download']);
 

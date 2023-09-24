@@ -33,7 +33,7 @@ class HomeController extends Controller
     } else {
       $data = Bus::latest();
     }
-    $arrivalLocations = Bus::take(20)->get(['from']);
+    $arrivalLocations = array_unique(Bus::pluck('from')->toArray());
     $buses = $data->paginate(6);
     return view('home.list', compact('buses', 'arrivalLocations'));
   }

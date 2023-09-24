@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Bus;
 use App\Models\Reservation;
 use App\Models\User;
+use Illuminate\Notifications\DatabaseNotification;
+use Illuminate\Support\Facades\Notification;
 use RealRashid\SweetAlert\Facades\Alert;
 use Yajra\DataTables\DataTables;
 
@@ -27,8 +29,9 @@ class CustomerController extends Controller
             ->make(true);
     }
 
-    public function pendingRequest()
+    public function pendingRequest(DatabaseNotification $notification = null)
     {
+        $notification?->markAsRead();
         return view('customer.pending-request');
     }
 

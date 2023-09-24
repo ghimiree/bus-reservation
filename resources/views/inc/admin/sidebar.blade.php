@@ -22,7 +22,7 @@
       <i class="fas fa-fw fa-h-square"></i>
       <span>Home</span></a>
   </li>
-  
+
   <!-- Divider -->
   <hr class="sidebar-divider">
 
@@ -78,7 +78,7 @@
       <i class="fas fa-fw fa-bus-alt"></i>
       <span>My chats</span></a>
   </li>
-  
+
   @role('user')
   <li class="nav-item {{ request()->segment(1) == 'my-reservatins' ? 'active': ''}}">
     <a class="nav-link" href="{{route('reservation.index')}}">

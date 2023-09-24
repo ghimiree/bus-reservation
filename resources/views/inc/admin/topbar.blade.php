@@ -47,7 +47,7 @@
     <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <i class="fas fa-bell fa-fw"></i>
       <!-- Counter - Alerts -->
-    <span class="badge badge-danger badge-counter">{{$notifications->count()}}+</span>
+    <span class="badge badge-danger badge-counter">{{ auth()->user()->unreadNotifications->count()}}+</span>
     </a>
     <!-- Dropdown - Alerts -->
     <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
@@ -56,7 +56,7 @@
       </h6>
       @if($notifications)
         @foreach($notifications as $notification)
-          <a class="dropdown-item d-flex align-items-center" href="{{route('customer.pendingRequest')}}">
+          <a class="dropdown-item d-flex align-items-center" href="{{ route('customer.pendingRequest', $notification) }}">
             <div class="mr-3">
               <div class="icon-circle bg-primary">
                 <i class="fas fa-file-alt text-white"></i>
@@ -71,7 +71,7 @@
       @else
         <div class="small text-gray-500">No notifications</div>
       @endif
-      <a class="dropdown-item text-center small text-gray-500" href="{{route('customer.pendingRequest')}}">Show All Requests</a>
+      <a class="dropdown-item text-center small text-gray-500" href="{{ route('customer.pendingRequest', $notification) }}">Show All Requests</a>
     </div>
   </li>
 

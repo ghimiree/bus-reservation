@@ -15,7 +15,7 @@
                 <input type="text" name="q" value="{{Request::get('q')}}" class="form-control" placeholder="Search By Name" />
                 <span class="input-group-append">
                   <button type="submit" class="btn btn-primary pt-1">
-                    <span class="fas fa-search"></span> Search Bus 
+                    <span class="fas fa-search"></span> Search Bus
                   </button>
                 </span>
               </div>
@@ -48,7 +48,7 @@
                     <option disabled selected value>
                       -- select an option --
                     </option>
-                    <option value="Everyday">Everyday</option>
+                    <option value="Every day">Everyday</option>
                     <option value="Sunday">Sunday</option>
                     <option value="Monday">Monday</option>
                     <option value="Tuesday">Tuesday</option>
@@ -56,8 +56,8 @@
                     <option value="Thursday">Thursday</option>
                     <option value="Friday">Friday</option>
                     <option value="Saturday">Saturday</option>
-                    <option value="Everyday except saturday">Everyday except saturday</option>
-                    <option value="Everyday except sunday">Everyday except sunday</option>
+                    <option value="Every day except saturday">Everyday except saturday</option>
+                    <option value="Every day except sunday">Everyday except sunday</option>
                   </select>
                 </form>
               </div>
@@ -77,7 +77,7 @@
                       -- select an option --
                     </option>
                   @foreach($arrivalLocations as $location)
-                    <option value="{{$location->from}}">{{$location->from}}</option>
+                    <option value="{{$location}}">{{$location}}</option>
                   @endforeach
                   </select>
                 </form>
@@ -96,7 +96,7 @@
         </div>
       </div>
       <div class="card-body">
-        
+
         @if($buses->count())
         @foreach($buses as $bus)
           <div class="bg-white p-3 shadow mb-3">
@@ -113,7 +113,7 @@
                 <h6 class="mt-2">
                   Bus code : {{$bus->bus_code}}
                 </h6>
-    
+
                 <div class="small my-1 d-flex">
                   <div class="mr-4">
                     <span>from: </span>
